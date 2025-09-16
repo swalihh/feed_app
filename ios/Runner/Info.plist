@@ -45,5 +45,42 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!-- Network permissions -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+	</dict>
+
+	<!-- Photo Library access for cached images -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photo library to cache and display images from posts.</string>
+
+	<!-- Camera access (if needed for future features) -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs camera access to capture photos for posts.</string>
+
+	<!-- Microphone access for video recording -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app needs microphone access to record videos with audio.</string>
+
+	<!-- Local network access -->
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This app needs local network access to connect to nearby devices.</string>
+
+	<!-- Background modes for connectivity monitoring -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>background-fetch</string>
+		<string>background-processing</string>
+	</array>
+
+	<!-- User tracking (for analytics if needed) -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This app would like to track usage to improve user experience.</string>
+
 </dict>
 </plist>
