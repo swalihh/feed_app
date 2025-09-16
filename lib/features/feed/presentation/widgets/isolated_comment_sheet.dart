@@ -32,7 +32,6 @@ class _IsolatedCommentSheetState extends State<IsolatedCommentSheet> {
 
   StreamSubscription<FeedState>? _stateSubscription;
 
-  // Hardcoded colors to avoid any context dependencies
   static const Color _background = Color(0xFF0F0F23);
   static const Color _surface = Color(0xFF1E1E3F);
   static const Color _surfaceVariant = Color(0xFF2A2A4A);
@@ -52,12 +51,10 @@ class _IsolatedCommentSheetState extends State<IsolatedCommentSheet> {
     _focusNode.addListener(_onFocusChanged);
     _stateSubscription = widget.feedBloc.stream.listen(_onStateChanged);
 
-    // Load comments
     _loadComments();
   }
 
   void _onFocusChanged() {
-    // Trigger rebuild when focus changes to adjust for keyboard
     if (mounted) {
       setState(() {});
     }

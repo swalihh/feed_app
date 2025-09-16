@@ -164,7 +164,6 @@ class _PostCardSkeletonState extends State<PostCardSkeleton>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // User header skeleton
                     Row(
                       children: [
                         SkeletonBox(
@@ -201,7 +200,6 @@ class _PostCardSkeletonState extends State<PostCardSkeleton>
                     ),
                     const SizedBox(height: 20),
 
-                    // Content skeleton
                     SkeletonBox(
                       width: double.infinity,
                       height: 20,
@@ -227,7 +225,6 @@ class _PostCardSkeletonState extends State<PostCardSkeleton>
                     ),
                     const SizedBox(height: 20),
 
-                    // Image skeleton
                     SkeletonBox(
                       width: double.infinity,
                       height: 220,
@@ -237,7 +234,6 @@ class _PostCardSkeletonState extends State<PostCardSkeleton>
                     ),
                     const SizedBox(height: 20),
 
-                    // Action buttons skeleton
                     Row(
                       children: [
                         SkeletonBox(
@@ -268,7 +264,6 @@ class _PostCardSkeletonState extends State<PostCardSkeleton>
                   ],
                 ),
               ),
-              // Shimmer overlay
               Positioned.fill(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),

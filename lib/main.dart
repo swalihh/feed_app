@@ -10,7 +10,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.setupLocator();
 
-  // Initialize services
   await ConnectivityService().initialize();
   await MediaCacheService().initialize();
   await ThemeService().initialize();

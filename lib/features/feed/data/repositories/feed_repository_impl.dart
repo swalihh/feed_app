@@ -31,18 +31,15 @@ class FeedRepositoryImpl implements FeedRepository {
       final connectivityResult = await connectivity.checkConnectivity();
       
       if (connectivityResult == ConnectivityResult.none) {
-        // No internet, return cached posts
         final cachedPosts = await localDataSource.getCachedPosts();
         return Right(cachedPosts);
       }
 
-      // Fetch from remote
       final remotePosts = await remoteDataSource.getPosts(
         page: page,
         limit: limit,
       );
 
-      // Fetch user data for each post
       final postsWithUsers = <PostModel>[];
       for (final post in remotePosts) {
         try {
@@ -50,17 +47,14 @@ class FeedRepositoryImpl implements FeedRepository {
           final postWithUser = post.copyWith(user: user);
           postsWithUsers.add(postWithUser);
         } catch (e) {
-          // If user fetch fails, add post without user data
           postsWithUsers.add(post);
         }
       }
 
-      // Cache the posts
       await localDataSource.cachePosts(postsWithUsers);
 
       return Right(postsWithUsers);
     } on APIException catch (e) {
-      // If server fails, try to return cached data
       try {
         final cachedPosts = await localDataSource.getCachedPosts();
         if (cachedPosts.isNotEmpty) {
@@ -120,7 +114,6 @@ class FeedRepositoryImpl implements FeedRepository {
 
       final post = await remoteDataSource.likePost(postId);
 
-      // Update cached post
       final cachedPost = await localDataSource.getCachedPost(postId);
       if (cachedPost != null) {
         final updatedPost = cachedPost.copyWith(

@@ -6,7 +6,6 @@ class ConstText{
 
 
 
-//constant Strings
 
 
 }

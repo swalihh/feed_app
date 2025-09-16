@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/feed_bloc.dart';
 import '../bloc/feed_event.dart';
 import '../bloc/feed_state.dart';
-import '../widgets/post_card.dart';
 import '../widgets/post_item_widget.dart';
 import '../widgets/loading_widget.dart';
 import '../widgets/error_widget.dart';
@@ -11,10 +10,9 @@ import '../widgets/isolated_comment_sheet.dart';
 import '../../../../injection_container.dart';
 import '../../../../core/services/theme_service.dart';
 import '../widgets/connectivity_banner.dart';
-import 'user_profile_page.dart';
 
 class FeedPage extends StatelessWidget {
-  const FeedPage({Key? key}) : super(key: key);
+  const FeedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class FeedPage extends StatelessWidget {
 }
 
 class FeedView extends StatefulWidget {
-  const FeedView({Key? key}) : super(key: key);
+  const FeedView({super.key});
 
   @override
   State<FeedView> createState() => _FeedViewState();

@@ -6,9 +6,9 @@ class UserProfilePage extends StatefulWidget {
   final User user;
 
   const UserProfilePage({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   @override
   State<UserProfilePage> createState() => _UserProfilePageState();
@@ -145,7 +145,6 @@ class _UserProfilePageState extends State<UserProfilePage>
             ),
             child: IconButton(
               onPressed: () {
-                // TODO: More options
               },
               icon: Icon(
                 Icons.more_vert_rounded,

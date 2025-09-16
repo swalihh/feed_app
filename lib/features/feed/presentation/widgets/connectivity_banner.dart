@@ -53,10 +53,8 @@ class _ConnectivityBannerState extends State<ConnectivityBanner>
     final isConnected = _connectivityService.isConnected;
 
     if (!isConnected && _wasConnected) {
-      // Lost connection
       _showNoConnectionBanner();
     } else if (isConnected && !_wasConnected) {
-      // Regained connection
       _showReconnectedBanner();
     }
 
@@ -78,7 +76,6 @@ class _ConnectivityBannerState extends State<ConnectivityBanner>
     });
     _animationController.forward();
 
-    // Hide banner after 3 seconds
     Future.delayed(const Duration(seconds: 3), () {
       if (mounted) {
         _hideBanner();
@@ -182,6 +179,7 @@ class _ConnectivityBannerState extends State<ConnectivityBanner>
                                       color: ColorManager.textPrimary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
+                                      decoration: TextDecoration.none,
                                     ),
                                   ),
                                   if (_connectivityService.isConnected) ...[
@@ -191,6 +189,7 @@ class _ConnectivityBannerState extends State<ConnectivityBanner>
                                       style: TextStyle(
                                         color: ColorManager.textPrimary.withOpacity(0.8),
                                         fontSize: 12,
+                                        decoration: TextDecoration.none,
                                       ),
                                     ),
                                   ] else ...[
@@ -200,6 +199,7 @@ class _ConnectivityBannerState extends State<ConnectivityBanner>
                                       style: TextStyle(
                                         color: ColorManager.textPrimary.withOpacity(0.8),
                                         fontSize: 12,
+                                        decoration: TextDecoration.none,
                                       ),
                                     ),
                                   ],

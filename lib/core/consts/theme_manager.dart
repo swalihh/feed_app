@@ -8,7 +8,6 @@ class ThemeManager {
       useMaterial3: true,
       brightness: Brightness.dark,
 
-      // Color Scheme
       colorScheme: ColorScheme.dark(
         primary: ColorManager.primary,
         primaryContainer: ColorManager.primaryDark,
@@ -26,7 +25,6 @@ class ThemeManager {
         outline: ColorManager.border,
       ),
 
-      // App Bar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: ColorManager.backgroundPrimary,
         foregroundColor: ColorManager.textPrimary,
@@ -49,7 +47,6 @@ class ThemeManager {
         ),
       ),
 
-      // Card Theme
       cardTheme: CardThemeData(
         color: ColorManager.cardBackground,
         elevation: 8,
@@ -60,7 +57,6 @@ class ThemeManager {
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       ),
 
-      // Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: ColorManager.primary,
@@ -79,7 +75,6 @@ class ThemeManager {
         ),
       ),
 
-      // Icon Button Theme
       iconButtonTheme: IconButtonThemeData(
         style: IconButton.styleFrom(
           foregroundColor: ColorManager.textSecondary,
@@ -91,7 +86,6 @@ class ThemeManager {
         ),
       ),
 
-      // Text Theme
       textTheme: TextTheme(
         displayLarge: TextStyle(
           color: ColorManager.textPrimary,
@@ -151,7 +145,6 @@ class ThemeManager {
         ),
       ),
 
-      // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: ColorManager.surface,
@@ -182,7 +175,6 @@ class ThemeManager {
         ),
       ),
 
-      // Bottom Sheet Theme
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: ColorManager.cardBackground,
         shape: const RoundedRectangleBorder(
@@ -193,17 +185,14 @@ class ThemeManager {
         elevation: 16,
       ),
 
-      // Divider Theme
       dividerTheme: DividerThemeData(
         color: ColorManager.divider,
         thickness: 1,
         space: 1,
       ),
 
-      // Scaffold Background
       scaffoldBackgroundColor: ColorManager.backgroundPrimary,
 
-      // Splash & Ripple Colors
       splashColor: ColorManager.rippleColor,
       highlightColor: ColorManager.hoverColor,
     );

@@ -13,7 +13,6 @@ class CacheService {
 
   CacheService._internal();
 
-  // if web we use the sharedpref
   Future<String?> readCache({required String key}) async {
     if (kIsWeb) {
       final prefs = await SharedPreferences.getInstance();

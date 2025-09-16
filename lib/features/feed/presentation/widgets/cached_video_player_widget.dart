@@ -1,3 +1,5 @@
+// ignore_for_file: empty_catches
+
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -11,11 +13,11 @@ class CachedVideoPlayerWidget extends StatefulWidget {
   final String? postId;
 
   const CachedVideoPlayerWidget({
-    Key? key,
+    super.key,
     required this.videoUrl,
     this.autoPlay = false,
     this.postId,
-  }) : super(key: key);
+  });
 
   @override
   State<CachedVideoPlayerWidget> createState() => _CachedVideoPlayerWidgetState();
@@ -48,15 +50,12 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
         _hasError = false;
       });
 
-      // Try to get cached file first
       _cachedFile = await _cacheService.getCachedFile(widget.videoUrl);
 
       VideoPlayerController controller;
       if (_cachedFile != null && await _cachedFile!.exists()) {
-        // Use cached file
         controller = VideoPlayerController.file(_cachedFile!);
       } else {
-        // Use network URL and cache in background
         controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl));
         _cacheVideoInBackground();
       }
@@ -76,7 +75,6 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
             _controller.play();
           }
         } catch (e) {
-          // Ignore setState errors during disposal
         }
       }
     } catch (error) {
@@ -87,7 +85,6 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
             _isLoading = false;
           });
         } catch (e) {
-          // Ignore setState errors during disposal
         }
       }
     }
@@ -106,14 +103,13 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
     try {
       _controller.dispose();
     } catch (e) {
-      // Ignore disposal errors
     }
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    super.build(context); // Required for AutomaticKeepAliveClientMixin
+    super.build(context); 
 
     if (_isLoading) {
       return _buildLoadingWidget();
@@ -218,7 +214,6 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
         _controller.pause();
       }
     } catch (e) {
-      // Ignore setState errors during disposal
     }
   }
 
@@ -238,13 +233,11 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
                 _showControls = false;
               });
             } catch (e) {
-              // Ignore setState errors during disposal
             }
           }
         });
       }
     } catch (e) {
-      // Ignore setState errors during disposal
     }
   }
 
@@ -356,7 +349,6 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
       _controller.dispose();
       _initializeVideo();
     } catch (e) {
-      // Ignore setState errors during disposal
     }
   }
 
@@ -399,7 +391,6 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
                   }
                 });
               } catch (e) {
-                // Ignore setState errors during disposal
               }
             },
           ),
@@ -427,7 +418,6 @@ class _CachedVideoPlayerWidgetState extends State<CachedVideoPlayerWidget>
                 _controller.setVolume(_controller.value.volume == 0 ? 1.0 : 0.0);
               });
             } catch (e) {
-              // Ignore setState errors during disposal
             }
           },
           child: Icon(

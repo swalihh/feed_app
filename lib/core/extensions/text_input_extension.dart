@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 
-//Emirates Number Formatter
 class EmiratesFormatter extends TextInputFormatter {
   final String sample;
   final String separator;

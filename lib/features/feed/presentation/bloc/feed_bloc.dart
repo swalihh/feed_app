@@ -121,7 +121,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
             isLiked: true,
           ));
 
-          // Return to normal loaded state
           emit(FeedLoaded(
             posts: updatedPosts,
             hasReachedMax: currentState.hasReachedMax,
@@ -164,7 +163,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
             isLiked: false,
           ));
 
-          // Return to normal loaded state
           emit(FeedLoaded(
             posts: updatedPosts,
             hasReachedMax: currentState.hasReachedMax,
@@ -210,7 +208,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
             comment: comment,
           ));
 
-          // Return to normal loaded state
           emit(FeedLoaded(
             posts: updatedPosts,
             hasReachedMax: currentState.hasReachedMax,
@@ -243,7 +240,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
             comments: comments,
           ));
 
-          // Return to normal loaded state
           emit(FeedLoaded(
             posts: currentState.posts,
             hasReachedMax: currentState.hasReachedMax,
@@ -256,15 +252,15 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
 
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {
-      case ServerFailure:
+      case const (ServerFailure):
         return failure.message;
-      case CacheFailure:
+      case const (CacheFailure):
         return failure.message;
-      case NetworkFailure:
+      case NetworkFailure _:
         return failure.message;
-      case ValidationFailure:
+      case ValidationFailure _:
         return failure.message;
-      case UnknownFailure:
+      case UnknownFailure _:
         return failure.message;
       default:
         return 'Unexpected error occurred';
