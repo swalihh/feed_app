@@ -1,5 +1,4 @@
-// ignore: avoid_web_libraries_in_flutter
-import "dart:html" as html; //Only for web
+import "dart:html" as html;
 import "dart:io" as io;
 import "package:flutter/foundation.dart";
 import "package:intl/intl.dart";
@@ -7,7 +6,6 @@ import "package:intl/intl.dart";
 import "../../data/models/logged_in_user.dart";
 
 Future<void> downloadFile(final String url, final String description) async {
-  ///Accept the url and description for naming
   try {
     final String? token = LoggedInUser.accessToken;
 
@@ -74,7 +72,6 @@ Future<void> downloadFile(final String url, final String description) async {
 }
 
 bool getFileExtension(final String url) {
-  ///Will provide extension for image and others
   String fileExtension = url.split(".").last.split("?").first;
   if (!RegExp(r"^[a-zA-Z0-9]+$").hasMatch(fileExtension)) {
     fileExtension = "file";

@@ -11,41 +11,34 @@ extension HexColor on Color {
 }
 
 class ColorManager {
-  // Premium Dark Theme Colors
   static Color primary = HexColor.fromHex("#6C5CE7");
   static Color primaryLight = HexColor.fromHex("#A29BFE");
   static Color primaryDark = HexColor.fromHex("#5742D3");
 
-  // Secondary Colors
   static Color secondary = HexColor.fromHex("#00CEC9");
   static Color secondaryLight = HexColor.fromHex("#00E5E1");
   static Color accent = HexColor.fromHex("#FF7675");
 
-  // Background Colors - Dark Premium Theme
   static Color backgroundPrimary = HexColor.fromHex("#0F0F23");
   static Color backgroundSecondary = HexColor.fromHex("#1A1A2E");
   static Color backgroundTertiary = HexColor.fromHex("#16213E");
   static Color cardBackground = HexColor.fromHex("#1E1E3F");
 
-  // Text Colors
   static Color textPrimary = HexColor.fromHex("#FFFFFF");
   static Color textSecondary = HexColor.fromHex("#B0B3B8");
   static Color textTertiary = HexColor.fromHex("#8B949E");
   static Color textMuted = HexColor.fromHex("#6E7681");
 
-  // Surface Colors
   static Color surface = HexColor.fromHex("#21262D");
   static Color surfaceVariant = HexColor.fromHex("#2D333B");
   static Color divider = HexColor.fromHex("#30363D");
   static Color border = HexColor.fromHex("#21262D");
 
-  // Status Colors
   static Color success = HexColor.fromHex("#238636");
   static Color warning = HexColor.fromHex("#D29922");
   static Color error = HexColor.fromHex("#F85149");
   static Color info = HexColor.fromHex("#58A6FF");
 
-  // Premium Gradient Colors
   static List<Color> primaryGradient = [
     HexColor.fromHex("#667EEA"),
     HexColor.fromHex("#764BA2"),
@@ -61,16 +54,13 @@ class ColorManager {
     HexColor.fromHex("#21262D"),
   ];
 
-  // Interactive Colors
   static Color rippleColor = primary.withOpacity(0.1);
   static Color hoverColor = primary.withOpacity(0.05);
   static Color selectedColor = primary.withOpacity(0.15);
 
-  // Shimmer Colors
   static Color shimmerBase = HexColor.fromHex("#2D333B");
   static Color shimmerHighlight = HexColor.fromHex("#30363D");
 
-  // Additional Premium Colors
   static Color gold = HexColor.fromHex("#FFD700");
   static Color premium = HexColor.fromHex("#FF6B35");
   static Color verified = HexColor.fromHex("#1DA1F2");

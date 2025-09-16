@@ -138,17 +138,13 @@ TextStyle rowDataTextSTyle = getTextStyle(
 );
 Color tableHeaderBgColor = Colors.grey[100]!;
 
-///Icon Size
 double eyeSize = 16;
 
-///Container Common Margin
 EdgeInsets commonPageMargin = const EdgeInsets.all(16);
 
-///Common Page Padding
 EdgeInsets commonPagePadding =
     const EdgeInsets.symmetric(horizontal: 25, vertical: 20);
 
-///Common Box Decoration
 BoxDecoration commonBoxDecoration = BoxDecoration(
   borderRadius: BorderRadius.circular(8),
   boxShadow: <BoxShadow>[
@@ -161,27 +157,22 @@ BoxDecoration commonBoxDecoration = BoxDecoration(
   color: Colors.white,
 );
 
-///Common Table Boarder Color
 Color commonTableBorderColor = Colors.grey[300]!;
 
-///Common Box Decoration
 BoxDecoration commonTableBoxDecoration = BoxDecoration(
   color: Colors.white,
   border: Border.all(color: commonTableBorderColor),
   borderRadius: BorderRadius.circular(14),
 );
 
-///Title Style For TExt Field
 TextStyle textfieldTitleStyle = getTextStyle(
     color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500);
 
-///Hint Style
 TextStyle textfieldHintStyle = getTextStyle(
   color: Colors.grey,
   fontSize: 13,
 );
 
-///Heading Text Style
 TextStyle headingTextstyle = getTextStyle(
   color: Colors.black,
   fontSize: 18,
@@ -189,16 +180,13 @@ TextStyle headingTextstyle = getTextStyle(
   
 );
 
-///Common Divider
 Divider commonDivider = Divider(
   color: Colors.grey[200] ?? Colors.grey,
   height: 0,
 );
 
-///popup Boarder Radius
 double popupBorderRadius = 25;
 
-///Table Date Format
 String tableDateFormat = 'dd/MMM/yy';
 Widget commonDialogFooterDivider = Column(
   children: [

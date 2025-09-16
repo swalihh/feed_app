@@ -40,13 +40,9 @@ class _PostItemWidgetState extends State<PostItemWidget> {
   }
 
   void _handleLike() {
-    // Optimistic UI update only - no BLoC events needed
     final wasLiked = _isLikedNotifier.value;
     _isLikedNotifier.value = !wasLiked;
     _likeCountNotifier.value += wasLiked ? -1 : 1;
-
-    // TODO: Make API call directly here if needed for persistence
-    // For now, keep it local-only to prevent page rebuilds
   }
 
   void _handleUserTap() {
@@ -68,7 +64,6 @@ class _PostItemWidgetState extends State<PostItemWidget> {
         return ValueListenableBuilder<int>(
           valueListenable: _likeCountNotifier,
           builder: (context, likeCount, child) {
-            // Create updated post with new like state
             final updatedPost = Post(
               id: widget.post.id,
               userId: widget.post.userId,

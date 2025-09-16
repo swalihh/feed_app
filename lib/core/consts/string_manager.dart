@@ -2,7 +2,6 @@ class AppStrings {
 
   static const String appName = "";
 
-  //Cache Key String
   static const String cToken = "cToken";
   static const String cRefresh = "cRefresh";
   static const String cLanguage = "cLanguage";
@@ -19,15 +18,6 @@ class AppStrings {
   static const String cFirebaseToken= 'cFirebaseToken';
 
 
-  // //CleverTap Event Names
-  // static const String clvTapLanguageApp= 'Language Selected';
-  // static const String clvTapLoginType= 'Login Type Selected';
-  // static const String clvTapLogin= 'Login';
-  // static const String clvTapSignUp= 'Signup';
-  // static const String clvTapDashBoard= 'Dashboard Activity';
-  // static const String clvTapHelp= 'Help';
-  // static const String clvTapPayBills= 'Pay Bills';
-  // static const String clvTapSendMoney= 'Send Money ';
 
 
 }

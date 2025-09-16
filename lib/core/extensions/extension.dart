@@ -13,7 +13,6 @@ extension HexColor on Color {
 
 
 extension StringExtension on String {
-  //To Make the String first letter capital
   String capitalize() {
     if (this == "") {
       return this;
@@ -22,7 +21,6 @@ extension StringExtension on String {
     }
   }
 
-  //Mobile Number Masking (+932 ***** 234) like this
   String maskNumber(int length) {
     if (this == "") {
       return this;
@@ -31,7 +29,6 @@ extension StringExtension on String {
     }
   }
 
-  //Emirates Number formatting (432-3243-23424233-3) like this
   String emiratesNumber(int length) {
     if (this == "") {
       return this;
@@ -42,7 +39,6 @@ extension StringExtension on String {
 
 
 
-// Amount formatting (222,000.00) like this
   String amountFormat(num amount) {
     final NumberFormat amountFormatter = NumberFormat('###,###,##0.00');
 

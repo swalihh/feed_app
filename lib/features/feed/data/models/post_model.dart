@@ -30,16 +30,13 @@ class PostModel extends Post {
   }) : super(user: userModel, comments: commentModels);
 
   factory PostModel.fromJson(Map<String, dynamic> json) {
-    // Create mixed feed with images and videos
     final postId = json['id'] as int;
     String? imageUrl;
     String? videoUrl;
 
-    // Create a balanced mix: 40% videos, 50% images, 10% text-only
     final mediaType = postId % 10;
 
     if (mediaType < 4) {
-      // 40% videos (posts 0,1,2,3 out of every 10)
       final videoUrls = [
         'https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
         'https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
@@ -54,7 +51,6 @@ class PostModel extends Post {
       ];
       videoUrl = videoUrls[postId % videoUrls.length];
     } else if (mediaType < 9) {
-      // 50% images (posts 4,5,6,7,8 out of every 10)
       final imageCategories = [
         'nature',
         'architecture',
@@ -70,7 +66,6 @@ class PostModel extends Post {
       final category = imageCategories[postId % imageCategories.length];
       imageUrl = 'https://picsum.photos/400/300?random=${postId}&category=${category}';
     }
-    // 10% text-only posts (post 9 out of every 10)
 
     return PostModel(
       id: json['id'] as int,
@@ -96,16 +91,13 @@ class PostModel extends Post {
 
   Map<String, dynamic> toJson() => _$PostModelToJson(this);
 
-  // Helper methods for generating realistic engagement metrics
   static int _generateLikeCount(int postId, bool isVideo) {
-    // Videos typically get more likes than images
     final baseMultiplier = isVideo ? 1.5 : 1.0;
     final random = (postId * 7) % 100;
     return ((random * baseMultiplier) + (isVideo ? 10 : 5)).toInt();
   }
 
   static int _generateCommentCount(int postId, bool isVideo) {
-    // Videos typically get more comments than images
     final baseMultiplier = isVideo ? 1.3 : 1.0;
     final random = (postId * 11) % 25;
     return ((random * baseMultiplier) + (isVideo ? 2 : 1)).toInt();

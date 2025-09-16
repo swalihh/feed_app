@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
-import 'package:sqflite/sqflite.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
 import 'core/interceptor/app_dio.dart';

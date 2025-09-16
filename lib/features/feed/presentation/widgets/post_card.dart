@@ -53,20 +53,15 @@ class PostCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // User header
           _buildUserHeader(context),
 
-          // Post content
           _buildPostContent(),
 
-          // Media content
           if (post.imageUrl != null || post.videoUrl != null)
             _buildMediaContent(),
 
-          // Action buttons
           _buildActionButtons(context),
 
-          // Post stats
           _buildPostStats(),
         ],
       ),
@@ -183,7 +178,6 @@ class PostCard extends StatelessWidget {
                 color: ColorManager.textSecondary,
               ),
               onPressed: () {
-                // TODO: Show post options
               },
             ),
           ),
@@ -244,7 +238,7 @@ class PostCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: post.videoUrl != null
             ? AspectRatio(
-                aspectRatio: 16 / 9, // Standard video aspect ratio
+                aspectRatio: 16 / 9, 
                 child: CachedVideoPlayerWidget(
                   videoUrl: post.videoUrl!,
                   autoPlay: true,
@@ -253,7 +247,7 @@ class PostCard extends StatelessWidget {
               )
             : post.imageUrl != null
                 ? AspectRatio(
-                    aspectRatio: 4 / 3, // Standard image aspect ratio
+                    aspectRatio: 4 / 3,
                     child: CachedNetworkImage(
                       imageUrl: post.imageUrl!,
                       fit: BoxFit.cover,
@@ -392,7 +386,6 @@ class PostCard extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
       child: Row(
         children: [
-          // Comments container
           if (post.commentCount > 0)
             Expanded(
               child: GestureDetector(
