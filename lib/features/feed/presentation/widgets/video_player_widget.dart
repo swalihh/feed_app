@@ -74,6 +74,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget>
   Widget build(BuildContext context) {
     super.build(context);
 
+
     if (_hasError) {
       return _buildErrorWidget();
     }
